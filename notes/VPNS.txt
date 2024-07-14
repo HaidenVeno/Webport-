@@ -1,0 +1,324 @@
+
+
+
+
+					Virtual Private Networks 
+
+
+- A virtual private networks is a network that is secuer and has attributes of a LAN but over a much larger scale.
+
+
+- VPNS are private data networks over public network - usually the internet.
+
+
+- VPNS extend corporate networks to remote offices, mobile users, telecommuters and other extranet partners.
+
+
+- VPNs use advanced encryption and tunneling technology to establish secure, end-to-end private network connections over the internet
+
+
+
+Whats the purpose?
+
+ - Extend communications on a global scale
+
+ - Create better communication with business partners 
+
+ - Decrease the cost of having to use traditional methods
+
+ - Faster more effective reliable business 
+
+-------------------------------------------------------------------------------------------------
+
+
+
+Site to Site VPNS 
+
+
+- Connects two entire networks
+
+- Configured on a router or a firewall on both networks
+
+- IPSEC VPN often used for site to site vpns, but can also be used for remote access vpns.
+
+- Good to connect one or more offices together.
+
+
+Remote Access VPNS 
+
+
+- Grants access to the corporate network, only for one device. Could be a laptop, desktop or smartphone.
+
+- Allows host computer to safely send encrypted data over the public internet. 
+
+- Requires an application on the host. 
+
+- OpenVPN, SyscoConnect
+
+- TLS is used for remote access vpns, 
+
+- TLS uses port 443. 
+
+
+Full Tunnels
+
+
+- Once connected to the vpn all traffic will be forwarded to the corporate network. 
+
+
+Split Tunnel 
+
+- Only traffic directed to the network is sent to the corporate network 
+
+
+-------------------------------------------------------------------------------------------------
+
+
+
+Device Types: Hardware
+
+- Usually a VPN type of router. 
+
+- Adding encryption support to existing router(s) can keep the upgrade costs of vpns low. 
+
+Pros:
+ 
+- Highest network throughput
+
+- Plug and Play
+
+- Dual Purpose
+
+Cons
+
+- Cost
+
+- Lack of Flexibility
+
+-------------------------------------------------------------------------------------------------
+
+Device Types: Firewall
+
+Workable solution for small networks with low traffic and volume
+
+Pros:
+
+- Harden OS 
+
+- Tri Purpose
+
+- Cost Effective 
+
+Cons 
+
+- Still Expensive
+
+-------------------------------------------------------------------------------------------------
+
+Device Types: Software 
+
+- Ideal for 2 end points not in the same organization 
+
+- Great when different firewalls are implemented
+
+- Good solution for better understanding a VPN, software runs on existing servers and share resources with them 
+
+
+Pros 
+
+- Flexible 
+
+- Relatively low cost
+
+Cons 
+
+- Lack of efficiency
+
+- More labor training required
+
+- Lower productivity; higher labor costs. 
+
+
+-------------------------------------------------------------------------------------------------
+
+Device Types: Internet Security Devices 
+
+- Standalone VPN devices specifically designed for tunneling, encryption and authentication are easier to setup and make attractive choices for businessses looking for 'turnkey' solutions 
+
+-------------------------------------------------------------------------------------------------
+
+VPN Solutions 
+
+- Remote access VPNS establish secure, encrypted connections between mobile or remote users and their corporastre networks via a third--party network such as an ISP. 
+
+- Encrypted dconnections between mobile or remote users and their corporate networks.
+
+- Remote user can make a local call to an ISP, as opposed dto a long-distance call to the corporate remote access server.
+
+- Ideal for a telecommuter or mobile salespeople.
+
+- VPN allows mobile wworkers & telecommuters to take advantage of broadband connectivity. i.e DSL, Cable. 
+
+- VPN Client - Software, hardware as well as router or firewall based solutions available. 
+
+-------------------------------------------------------------------------------------------------
+
+
+VPN Solutions cntd... 
+
+
+- Intranet VPNS provide full access to a companys network, a network where all employees can create content, communicate, collaborate and develop. 
+
+
+ - Site to Site VPNS are an alternative WAN infrastructure that is used to connect branch offices, home offices, or business partners' sites to all or portions of a company's network.
+
+	0 Large-scale encryption between mumltiple fixed sites such as remote offices and central      offices 
+	0 Network traffic is sent over the branch office Internet connection.
+
+	0 This saves the company hardware and management expenses
+
+
+
+
+Extranet VPNS provide business partners with limited access to a company's network.
+
+
+-------------------------------------------------------------------------------------------------
+
+VPN Solutions cntd... 
+
+Trusted VPNS 
+
+
+- Companies lease circuits from communication providers and use them in the same manner they use physical cables in a private LAN. 
+
+- Communication provider is trusted for data integrity and security. 
+
+- Used before internet became universal 
+
+Secure VPNS  use Internet as a corporate communication medium. Data is encrypted before sending, moved over to the internet, and then decrypted at the receiving end. 
+
+	0 Encrytion creates a security 'tunne;' that can't be attacked.
+
+	0 More desireable than trusted VPNs
+
+Hybrid VPNs - A secure VPN is created as part of the trusted VPN thus creating a 'hybrid' VPN. Secure part ot the VPN is usually administered by customers (using VPN equipment) 
+
+	0 Secure VPNs that are administered by ISPs are called provider-provisioned VPNs
+
+-------------------------------------------------------------------------------------------------
+
+PPTP Point-to-Point Tunneling Protocol 
+
+- Its the most widely supported VPN method among Windows users and it was created by Microsoft in association with other technology companies..
+
+- Compared to other methods, PPTP is faster, and it is also available for Linux and Mac users. .
+
+- Voluntary tunneling method 
+
+------------------------------------------------------------------------------------------------
+
+L2TP - Layer 2 Tunneling Protocol 
+
+Another tunneling protocol that supports VPNs
+
+- The difference b etween PPTP and L2TP is that the second one provides not only data confidentiality, but also data integrity. 
+
+- L2TP was developed by Miscrosoft and Cisco as a combination between PPTP and L2F (Layer 2 Forwarding)
+
+
+- PPTP and L2TP operate at the Data Link Layer (Layer 2) of the OSI Model.
+
+-------------------------------------------------------------------------------------------------
+
+IPSec - Internet Protocol Security 
+
+
+- IPsec is a collection of multiple related protocols 
+
+- It can be used as a complete VPN protocol solution or simply as the encryption scheme within L2TP or PPTP
+
+- IPsec exists at the neetwork layer (layer 3) of the OSI model.
+
+-------------------------------------------------------------------------------------------------
+
+
+
+Encryption
+
+
+- The VPN client at each end of the tunnel encrypts the data entering the tunnel and decrypts sit at the other end. 
+
+- There are two common forms of encryption 
+
+	0 Symmetric-key encryption
+
+	0 Publuc-key encryption. 
+
+-------------------------------------------------------------------------------------------------
+
+VPN  Management 
+
+Management of devices - simpler is better. 
+
+	0 Element-based less expensive, adequate for managing and monitoring small setups. 
+
+	0 Policy-based centralized for larger networks, policies established and push them to all applicable devices. - Outsource VPN management to the ISP or ASP 
+
+- VPNs provide reliable access to the network 
+
+- VPN software allows transmitted data packets to transparently switch over to a different path in case of a device failure. 
+
+- Redundancy in hardware components reduces the risk of downtime. 
+
+-------------------------------------------------------------------------------------------------
+Benefits of Using VPNs
+
+- Lower costs
+
+- Connectivity improvemenets, VPN based links are easy and inexpensive ways to meet changing business demands
+
+- Anywhere anytime access, internet access, VPN connectivity. 
+
+- Scalability. 
+
+Disadvantages 
+
+- VPNs require an in-depth understanding of public network security issues and proper deployment of precautions
+
+- Availability ansd performance depends on factors largely outside of their control. 
+
+- Immature standards.
+
+- VPNs need to accomodate protocols other than IP and existing internal network technology.
+
+
+-------------------------------------------------------------------------------------------------
+
+Industries That May Use a VPN
+
+- Healthcare
+
+- Manufacturing
+
+- Retail
+
+- Banking, Financial
+
+- General Businesses
+
+-------------------------------------------------------------------------------------------------
+
+Where Do We See VPNS Going in the Future?
+
+- VPNs are continually being enhanced 
+
+- More VPNs. 
+
+- Networks are expected to converge to create integrated VPNs
+
+- IMprovides protocols are expected which will improve VPNs. 
+
+
+
+-------------------------------------------------------------------------------------------------
