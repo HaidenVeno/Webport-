@@ -9,6 +9,15 @@ app.config['SECRET_KEY'] = 'your-secret-key'  # Change this to a random secret k
 app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'notes')
 app.config['ALLOWED_EXTENSIONS'] = {'txt'}
 
+# Add this new function for www redirect
+@app.before_request
+def redirect_to_www():
+    """Redirect non-www requests to www."""
+    if request.host.startswith('haidenveno.com'):
+        url_parts = request.url.split('://')
+        url = f'{url_parts[0]}://www.{url_parts[1]}'
+        return redirect(url, code=301)
+
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
