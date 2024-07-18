@@ -5,17 +5,22 @@ from werkzeug.utils import secure_filename
 import os
 
 app = Flask(__name__, static_folder='static')
+app.config ['SESSION_COOKIE_SECURE'] = True
 app.config['SECRET_KEY'] = 'your-secret-key'  # Change this to a random secret key
 app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'notes')
 app.config['ALLOWED_EXTENSIONS'] = {'txt'}
 
 # Add this new function for www redirect
 @app.before_request
-def redirect_to_www():
-    """Redirect non-www requests to www."""
-    if request.host.startswith('haidenveno.com'):
-        url_parts = request.url.split('://')
-        url = f'{url_parts[0]}://www.{url_parts[1]}'
+def redirect_to_www_and_https():
+    """Redirect non-www requests to www and HTTP to HTTPS."""
+    if request.url.startswith('http://'):
+        url = request.url.replace('http://', 'https://', 1)
+        if not request.host.startswith('www.'):
+            url = url.replace('https://', 'https://www.', 1)
+        return redirect(url, code=301)
+    elif not request.host.startswith('www.'):
+        url = request.url.replace('https://', 'https://www.', 1)
         return redirect(url, code=301)
 
 login_manager = LoginManager()
@@ -113,4 +118,4 @@ def new_note():
     return render_template('new_note.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.run(debug=True)
