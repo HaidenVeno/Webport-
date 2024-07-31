@@ -83,20 +83,24 @@ def serve_note(filename):
 @login_required
 def edit_note(filename):
     notes_dir = os.path.join(app.root_path, 'notes')
-    file_path = os.path.join(notes_dir, filename)
-    if not os.path.exists(file_path) or not filename.endswith('.txt'):
+    # Find the file regardless of case
+    real_filename = next((f for f in os.listdir(notes_dir) if f.lower() == filename.lower()), None)
+    if not real_filename:
         abort(404)
+    file_path = os.path.join(notes_dir, real_filename)
+    
     if request.method == 'POST':
         content = request.form['content']
         try:
             with open(file_path, 'w') as file:
                 file.write(content)
-            return redirect(url_for('serve_note', filename=filename))
+            return redirect(url_for('serve_note', filename=real_filename))
         except IOError:
             return "Error saving the file", 500
+    
     with open(file_path, 'r') as file:
         content = file.read()
-    return render_template('edit_note.html', content=content, title=filename.replace('.txt', '').replace('-', ' ').title(), filename=filename)
+    return render_template('edit_note.html', content=content, title=real_filename.replace('.txt', '').replace('-', ' ').title(), filename=real_filename)
 
 @app.route('/new_note', methods=['GET', 'POST'])
 @login_required
